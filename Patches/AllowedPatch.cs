@@ -11,9 +11,7 @@ namespace ForeverCosmetx.Patches
     [HarmonyPatch("IsItemAllowed", MethodType.Normal)]
     internal class SlidePatch
     {
-        private static void Postfix(VRRig __instance, ref bool __result)
-        {
+        private static void Postfix(VRRig __instance, ref bool __result) =>
             __result = true;
-        }
     }
 }

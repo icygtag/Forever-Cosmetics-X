@@ -20,7 +20,7 @@ namespace ForeverCosmetx
     public class Plugin : BaseUnityPlugin
     {
         public static Plugin instance;
-        void Start()
+        void Awake()
         {
             instance = this;
             HarmonyPatches.ApplyHarmonyPatches();
@@ -36,7 +36,7 @@ namespace ForeverCosmetx
                 {
                     try
                     {
-                        UnlockItem.Invoke(CosmeticsController.instance, new object[] { cosmeticItem.itemName });
+                        UnlockItem.Invoke(CosmeticsController.instance, new object[] { cosmeticItem.itemName, false });
                     } catch { }
                 }
             }

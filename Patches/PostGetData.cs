@@ -11,9 +11,7 @@ namespace ForeverCosmetx.Patches
     [HarmonyPatch("Initialize", MethodType.Normal)]
     public class PostGetData
     {
-        private static void Postfix()
-        {
+        private static void Postfix() =>
             Plugin.instance.UnlockCosmetics();
-        }
     }
 }
